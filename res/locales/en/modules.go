@@ -247,7 +247,27 @@ func init() {
 				"Listen closely, %s",
 			},
 			Replacer: modules.AdvicesReplacer,
-},
+		},
+		{
+			Tag: modules.HelpTag,
+			Patterns: []string{
+				"Tell me more about ",
+				"How do I use ",
+				"How can I use ",
+				"Can you help me with ",
+				"I need help with ",
+				"Can you tell me more about ",
+				"Tell me how to use ",
+			},
+			Responses: []string{
+				"%s",
+			},
+			Replacer: modules.HelpReplacer,
+			// I added these additional attributes to the Module type
+			// but since they are not indexed they are irrelevant for this issue.
+			//HelpText: "I can help you using my capabilities.",
+			//Title:    "Help",
+		},
 	})
 
 	// COUNTRIES
